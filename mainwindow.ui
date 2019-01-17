@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>747</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 9pt &quot;新宋体&quot;;
+selection-background-color: rgb(56, 56, 56);
+color: rgb(247, 247, 247);
+background-color: rgb(34, 34, 34);
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>720</width>
+     <height>576</height>
+    </size>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="PreviousButton">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>&lt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="OpenButton">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Open</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ResetButton">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="SaveButton">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGraphicsView" name="graphicsView">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(34, 34, 34);
+gridline-color: rgb(34, 34, 34);</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="NextButton">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>747</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">selection-background-color: rgb(56, 56, 56);</string>
+   </property>
+   <widget class="QMenu" name="menuTransform">
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">selection-background-color: rgb(55, 55, 55);</string>
+    </property>
+    <property name="title">
+     <string>Transform</string>
+    </property>
+    <addaction name="actionrgb2gray"/>
+    <addaction name="actionlogtransform"/>
+    <addaction name="actionopposite"/>
+    <addaction name="actioncontrastcontrol"/>
+    <addaction name="actionHistEq"/>
+    <addaction name="actionHistEqColor"/>
+    <addaction name="actionHistEqColor2"/>
+    <addaction name="actionAffine"/>
+   </widget>
+   <widget class="QMenu" name="menuSpecial_Filter">
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">selection-background-color: rgb(55, 55, 55);</string>
+    </property>
+    <property name="title">
+     <string>Special Filter</string>
+    </property>
+    <addaction name="actionLinear"/>
+    <addaction name="actionCrop"/>
+    <addaction name="actionGauss"/>
+    <addaction name="actionBilateral"/>
+    <addaction name="actionMid"/>
+    <addaction name="actionErode"/>
+    <addaction name="actionDilate"/>
+   </widget>
+   <widget class="QMenu" name="menuFourier_Transform">
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">selection-background-color: rgb(55, 55, 55);</string>
+    </property>
+    <property name="title">
+     <string>Fourier Transform</string>
+    </property>
+    <addaction name="actionFFT"/>
+    <addaction name="actionIFFT"/>
+    <addaction name="actionLowpass"/>
+    <addaction name="actionHighpass"/>
+   </widget>
+   <addaction name="menuTransform"/>
+   <addaction name="menuSpecial_Filter"/>
+   <addaction name="menuFourier_Transform"/>
+  </widget>
+  <action name="actionrgb2gray">
+   <property name="text">
+    <string>rgb2gray</string>
+   </property>
+  </action>
+  <action name="actionlogtransform">
+   <property name="text">
+    <string>log</string>
+   </property>
+  </action>
+  <action name="actionopposite">
+   <property name="text">
+    <string>opposite</string>
+   </property>
+  </action>
+  <action name="actioncontrastcontrol">
+   <property name="text">
+    <string>contrast control</string>
+   </property>
+  </action>
+  <action name="actionHistEq">
+   <property name="text">
+    <string>HistEq</string>
+   </property>
+  </action>
+  <action name="actionHistEqColor">
+   <property name="text">
+    <string>HistEqColor</string>
+   </property>
+  </action>
+  <action name="actionHistEqColor2">
+   <property name="text">
+    <string>HistEqColor2</string>
+   </property>
+  </action>
+  <action name="actionLinear">
+   <property name="text">
+    <string>Linear</string>
+   </property>
+  </action>
+  <action name="actionCrop">
+   <property name="text">
+    <string>Crop</string>
+   </property>
+  </action>
+  <action name="actionGauss">
+   <property name="text">
+    <string>Gauss</string>
+   </property>
+  </action>
+  <action name="actionBilateral">
+   <property name="text">
+    <string>Bilateral</string>
+   </property>
+  </action>
+  <action name="actionMid">
+   <property name="text">
+    <string>Mid</string>
+   </property>
+  </action>
+  <action name="actionErode">
+   <property name="text">
+    <string>Erode</string>
+   </property>
+  </action>
+  <action name="actionDilate">
+   <property name="text">
+    <string>Dilate</string>
+   </property>
+  </action>
+  <action name="actionLowpass">
+   <property name="text">
+    <string>Low-pass</string>
+   </property>
+  </action>
+  <action name="actionHighpass">
+   <property name="text">
+    <string>High-pass</string>
+   </property>
+  </action>
+  <action name="actionFFT">
+   <property name="text">
+    <string>FFT</string>
+   </property>
+  </action>
+  <action name="actionIFFT">
+   <property name="text">
+    <string>IFFT</string>
+   </property>
+  </action>
+  <action name="actionAffine">
+   <property name="text">
+    <string>Affine Transformation</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
